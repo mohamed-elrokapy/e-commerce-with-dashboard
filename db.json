@@ -1,0 +1,142 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "fullname": "mohamed elsayed",
+      "email": "mohamedrad2022@gmail.com",
+      "phone": "01203363707",
+      "password": "Mohamed121@",
+      "role": "admin"
+    },
+    {
+      "id": "3d5f",
+      "fullname": "ahmed ahmed",
+      "email": "hawash@gmail.com",
+      "password": "Ahmed121@",
+      "phone": "01203363939",
+      "role": "user"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "price": 12.99,
+      "title": " Eldopal Pancakes 1 ",
+      "productDescription": "Pancakes with Ice Creams and Chocolate",
+      "img": "https://images.pexels.com/photos/14693799/pexels-photo-14693799.jpeg",
+      "count": 1
+    },
+    {
+      "id": "4",
+      "price": 10.5,
+      "title": "Eldopal Pancakes 2",
+      "productDescription": "Pancakes with Cream and Fruits",
+      "img": "https://images.pexels.com/photos/12814604/pexels-photo-12814604.jpeg",
+      "count": 1
+    },
+    {
+      "id": "5",
+      "price": 11.99,
+      "title": "Eldopal Pancakes 3",
+      "productDescription": "Pancakes with Fruits on Yellow Plate",
+      "img": "https://images.pexels.com/photos/23384605/pexels-photo-23384605.jpeg",
+      "count": 1
+    },
+    {
+      "id": "6",
+      "price": 8.99,
+      "title": "Eldopal Waffles 1",
+      "productDescription": "Waffles With Strawberries",
+      "img": "https://images.pexels.com/photos/8262836/pexels-photo-8262836.jpeg",
+      "count": 1
+    },
+    {
+      "id": "7",
+      "price": 9.99,
+      "title": "Eldopal Waffles 2",
+      "productDescription": "Strawberries and Cream on Top of a Waffle",
+      "img": "https://images.pexels.com/photos/13544227/pexels-photo-13544227.jpeg",
+      "count": 1
+    },
+    {
+      "id": "8",
+      "price": 6.5,
+      "title": "Pancakes with Blackberries",
+      "productDescription": "Mound of Pancakes with Blackberries",
+      "img": "https://images.pexels.com/photos/17751906/pexels-photo-17751906.jpeg",
+      "count": 1
+    },
+    {
+      "id": "9",
+      "price": 7.5,
+      "title": "delecious pancakes",
+      "productDescription": "A Person Cutting a Stack of Pancakes",
+      "img": "https://images.pexels.com/photos/7144352/pexels-photo-7144352.jpeg",
+      "count": 1
+    },
+    {
+      "id": "10",
+      "price": 12.1,
+      "title": "Pancakes with Strawberries",
+      "productDescription": "Delicious Pancakes with Honey and Strawberries",
+      "img": "https://images.pexels.com/photos/31098650/pexels-photo-31098650.jpeg",
+      "count": 1
+    },
+    {
+      "id": "11",
+      "price": 11.1,
+      "title": "Pancakes",
+      "productDescription": "Pancakes with Strawberry",
+      "img": "https://images.pexels.com/photos/7144345/pexels-photo-7144345.jpeg",
+      "count": 1
+    },
+    {
+      "id": "12",
+      "price": 11.5,
+      "title": "Pancakes With Syrup ",
+      "productDescription": "A Stack of Pancakes With Syrup",
+      "img": "https://images.pexels.com/photos/7144353/pexels-photo-7144353.jpeg",
+      "count": 1
+    },
+    {
+      "id": "13",
+      "price": 10.1,
+      "title": " with Honey",
+      "productDescription": "Stack of Pancakes with dripping Honey",
+      "img": "https://images.pexels.com/photos/10930149/pexels-photo-10930149.jpeg",
+      "count": 1
+    },
+    {
+      "id": "14",
+      "price": 9.5,
+      "title": " with Honey 2 ",
+      "productDescription": "Pancakes with Honey 2",
+      "img": "https://images.pexels.com/photos/20109562/pexels-photo-20109562.jpeg",
+      "count": 1
+    },
+    {
+      "id": "15",
+      "price": 13.1,
+      "title": "Pancakes with Fresh Berries ",
+      "productDescription": "Delicious Pancakes with Fresh Berries and Cream",
+      "img": "https://images.pexels.com/photos/28618624/pexels-photo-28618624.jpeg",
+      "count": 1
+    },
+    {
+      "id": "16",
+      "price": 12.5,
+      "title": "Pancake with Fruit",
+      "productDescription": "Delicious Pancake with Fruit and Cream Toppings",
+      "img": "https://images.pexels.com/photos/31556295/pexels-photo-31556295.jpeg",
+      "count": 1
+    },
+    {
+      "id": "17",
+      "price": 14.1,
+      "title": "Pancakes Drizzled with Honey",
+      "productDescription": "Delicious Pancakes Drizzled with Honey",
+      "img": "https://images.pexels.com/photos/30911219/pexels-photo-30911219.jpeg",
+      "count": 1
+    }
+  ]
+}
