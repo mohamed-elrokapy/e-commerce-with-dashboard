@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from "react";
+import React, { useContext, Fragment, useEffect } from "react";
 import appcontext from "../../context/appcontext";
 import { Button } from "@material-tailwind/react";
 import { useNavigate } from "react-router-dom";
@@ -8,9 +8,8 @@ import { motion } from "framer-motion";
 import { FaEye, FaEdit, FaTrash } from "react-icons/fa";
 
 const Productstable = () => {
-  const FIREBASE_URL = import.meta.env.REACT_APP_FIREBASE_DATABASE_URL;
-  const { refresh, setrefresh, products, settargetedproduct } =
-    useContext(appcontext);
+  const FIREBASE_URL = import.meta.env.VITE_FIREBASE_DATABASE_URL;
+  const { setproducts, products, settargetedproduct } = useContext(appcontext);
   const navigate = useNavigate();
 
   const navigateToView = (id) => {
@@ -42,13 +41,17 @@ const Productstable = () => {
     if (confirm.isConfirmed) {
       try {
         await axios.delete(`${FIREBASE_URL}/products/${product.id}.json`);
-        setrefresh(!refresh);
+        console.log("Product deleted:", products);
+
         await Swal.fire({
           icon: "success",
           title: "Deleted!",
           text: "Product deleted successfully.",
           confirmButtonColor: "#3085d6",
         });
+        setproducts((prev) =>
+          prev.filter((product) => product && product.id !== id)
+        );
       } catch (err) {
         console.error("Error deleting product:", err);
         Swal.fire({

@@ -4,8 +4,7 @@ import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
-import data from "../db.json"; // تأكد إن المسار صحيح ومناسب
-
+import data from "../db.json"; 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,

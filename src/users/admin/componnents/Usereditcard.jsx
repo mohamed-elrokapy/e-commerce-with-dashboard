@@ -13,7 +13,7 @@ import {
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const FIREBASE_URL = import.meta.env.REACT_APP_FIREBASE_DATABASE_URL;
+const FIREBASE_URL = import.meta.env.VITE_FIREBASE_DATABASE_URL;
 export default function Usereditcard() {
   const { targeteduser, setrefresh, refresh } = useContext(appcontext);
   const [updateduser, setupdateduser] = useState({

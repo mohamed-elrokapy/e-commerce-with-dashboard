@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const FIREBASE_URL = import.meta.env.REACT_APP_FIREBASE_DATABASE_URL;
+const FIREBASE_URL = import.meta.env.VITE_FIREBASE_DATABASE_URL;
 const Userstable = () => {
   const { refresh, setrefresh, allusers, settargeteduser } =
     useContext(appcontext);

@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 export default function Editproduct() {
-  const FIREBASE_URL = import.meta.env.REACT_APP_FIREBASE_DATABASE_URL;
+  const FIREBASE_URL = import.meta.env.VITE_FIREBASE_DATABASE_URL;
   const [updatedproduct, setupdatedproduct] = useState({
     price: "",
     title: "",
@@ -33,18 +33,7 @@ export default function Editproduct() {
   const { targetedproduct, refresh, setrefresh } = useContext(appcontext);
   const navigate = useNavigate();
 
-  // Fill form with existing product data when component mounts
-  useEffect(() => {
-    if (targetedproduct) {
-      setupdatedproduct({
-        title: targetedproduct.title || "",
-        price: targetedproduct.price || "",
-        productDescription: targetedproduct.productDescription || "",
-        img: targetedproduct.img || "",
-        count: targetedproduct.count || "",
-      });
-    }
-  }, [targetedproduct]);
+  console.log("tccccccccccccargetedproduct:", targetedproduct);
 
   const validation = () => {
     const allerrors = {};
@@ -123,6 +112,18 @@ export default function Editproduct() {
       }
     }
   };
+
+  useEffect(() => {
+    if (targetedproduct) {
+      setupdatedproduct({
+        title: targetedproduct.title || "",
+        price: targetedproduct.price || "",
+        productDescription: targetedproduct.productDescription || "",
+        img: targetedproduct.img || "",
+        count: targetedproduct.count || "",
+      });
+    }
+  }, [targetedproduct]);
 
   return (
     <form

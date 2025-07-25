@@ -25,7 +25,7 @@ export default function AvatarWithUserDropdown() {
         navigate("/userprofile");
         break;
       case "Sign Out":
-        localStorage.removeItem("postuserid");
+        localStorage.removeItem("token");
         setisloggedin(false);
         navigate("/login");
         break;
@@ -51,7 +51,7 @@ export default function AvatarWithUserDropdown() {
       label: "Sign Out",
       icon: PowerIcon,
     },
-  ].filter((item) => item.label !== null); // Filter out items with null labels
+  ].filter((item) => item.label !== null);
 
   return (
     <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">

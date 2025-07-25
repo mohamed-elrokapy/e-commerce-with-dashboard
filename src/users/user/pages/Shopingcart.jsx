@@ -44,6 +44,7 @@ const Shopingcart = () => {
 
   useEffect(() => {
     alltotal();
+    localStorage.setItem("shoppinglist", JSON.stringify(shoppinglist));
   }, [shoppinglist]);
 
   return (
