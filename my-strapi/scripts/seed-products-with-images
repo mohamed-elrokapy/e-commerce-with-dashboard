@@ -1,0 +1,69 @@
+"use strict";
+
+const fs = require("fs-extra");
+const path = require("path");
+const { createStrapi, compileStrapi } = require("@strapi/strapi");
+const products = require("../data/products.json");
+
+async function getFileData(fileName) {
+  const filePath = path.join(__dirname, "../data/uploads", fileName);
+  const stats = fs.statSync(filePath);
+  return {
+    filepath: filePath,
+    originalFileName: fileName,
+    size: stats.size,
+    mimetype: "image/jpeg", // أو استخدم mime.lookup(filePath) لو حابب دقة أكبر
+  };
+}
+
+async function uploadFile(file, name, app) {
+  return app
+    .plugin("upload")
+    .service("upload")
+    .upload({
+      files: file,
+      data: {
+        fileInfo: {
+          alternativeText: name,
+          name,
+        },
+      },
+    });
+}
+
+async function seedProducts(app) {
+  for (const product of products.products) {
+    let uploadedImg = null;
+    if (product.img) {
+      const fileData = await getFileData(path.basename(product.img));
+      [uploadedImg] = await uploadFile(fileData, product.title, app);
+    }
+
+    await app.db.query("api::product.product").create({
+      data: {
+        title: product.title,
+        price: product.price,
+        description: product.productDescription,
+        count: product.count,
+        img: uploadedImg ? uploadedImg.id : null,
+      },
+    });
+  }
+  console.log("Products seeded successfully!");
+}
+
+async function main() {
+  const appContext = await compileStrapi();
+  const app = await createStrapi(appContext).load();
+
+  try {
+    await seedProducts(app);
+  } catch (err) {
+    console.error(err);
+  } finally {
+    await app.destroy();
+    process.exit(0);
+  }
+}
+
+main();
