@@ -34,7 +34,7 @@ npm install
 npm run build
 
 # انسخ build للـ Strapi public folder
-cp -r dist ../my-strapi/public || { echo "❌ dist folder not found"; exit 1; }
+cp -r dist/. ../my-strapi/public/ || { echo "❌ dist folder not found"; exit 1; }
 
 # -----------------------------
 # 3️⃣ Start Strapi

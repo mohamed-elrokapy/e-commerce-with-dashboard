@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "fullname": "Demo Admin",
+      "email": "admin@demo.test",
+      "phone": "5550100",
+      "password": "Admin#Demo1",
+      "role": "admin"
+    },
+    {
+      "fullname": "Demo Shopper",
+      "email": "shopper@demo.test",
+      "phone": "5550101",
+      "password": "Shopper#Demo1",
+      "role": "user"
+    }
+  ]
+}

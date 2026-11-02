@@ -129,3 +129,5 @@ dist
 build
 .strapi-updater.json
 .strapi-cloud.json
+# Local seed credentials (copy data/users.example.json to data/users.json)
+data/users.json
