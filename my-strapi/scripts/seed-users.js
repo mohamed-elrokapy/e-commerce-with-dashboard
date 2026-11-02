@@ -57,6 +57,7 @@ module.exports = async ({ strapi }) => {
         username: user.fullname,
         email: user.email,
         password: hashedPassword,
+        provider: "local",
         confirmed: true,
         blocked: false,
         role: role.id,
