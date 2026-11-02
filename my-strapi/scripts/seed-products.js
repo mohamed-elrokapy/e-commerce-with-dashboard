@@ -81,7 +81,7 @@ module.exports = async ({ strapi }) => {
     .query(uid)
     .count({ where: { publishedAt: { $notNull: true } } });
 
-  if (FileSystemWritableFileStream) {
+  if (publishedCount > 0) {
     console.log(
       `Found ${publishedCount} published products, skipping seeding...`
     );
@@ -97,12 +97,7 @@ module.exports = async ({ strapi }) => {
 
   // نعمل create وننشر كل منتج واحد واحد (أضمن طريقة في v5)
   for (const product of products) {
-    await strapi.entityService.create(uid, {
-      data: {
-        ...product,
-        publishedAt: new Date(), // ده اللي بيخليها published فوراً
-      },
-    });
+    await strapi.documents(uid).create({ data: product, status: "published" });
   }
 
   console.log(
