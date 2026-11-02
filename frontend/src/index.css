@@ -1,3 +1,94 @@
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/noto-sans-arabic";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-syrup ring-offset-2 ring-offset-paper;
+  }
+  ::selection {
+    @apply bg-syrup-tint text-ink;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-[2.5rem] items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-syrup text-white hover:bg-syrup-dark active:bg-syrup-dark;
+  }
+  .btn-secondary {
+    @apply btn border border-line-strong bg-white text-ink hover:bg-paper-2;
+  }
+  .btn-ghost {
+    @apply btn text-ink-soft hover:bg-paper-2 hover:text-ink;
+  }
+  .btn-danger {
+    @apply btn bg-berry text-white hover:bg-[#8F1F19];
+  }
+  .btn-sm {
+    @apply min-h-[2rem] px-3 py-1 text-[13px];
+  }
+  .input {
+    @apply w-full rounded-md border border-line-strong bg-white px-3 py-2 text-sm text-ink placeholder:text-ink-faint focus:border-syrup focus:outline-none focus:ring-2 focus:ring-syrup/30 disabled:bg-paper-2 disabled:text-ink-soft aria-[invalid=true]:border-berry;
+  }
+  .card {
+    @apply rounded-lg border border-line bg-white shadow-card;
+  }
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.14em] text-syrup;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    animation: fade-in 0.35s ease-out both;
+  }
+  .skeleton {
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

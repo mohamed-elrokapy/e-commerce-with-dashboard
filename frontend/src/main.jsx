@@ -1,13 +1,16 @@
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
-import { ThemeProvider } from "@material-tailwind/react";
+import AppProvider from "./state/AppProvider.jsx";
 
-import { BrowserRouter } from "react-router-dom";
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
-  </BrowserRouter>
+  <StrictMode>
+    <BrowserRouter>
+      <AppProvider>
+        <App />
+      </AppProvider>
+    </BrowserRouter>
+  </StrictMode>
 );
